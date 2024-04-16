@@ -1,0 +1,14 @@
+src_dir: ./src
+out_dir: ./out
+clean: true
+
+targets:
+  assets:
+    src: main.sw
+    out: assets
+    targets:
+      - sb3
+      - html
+
+default:
+  - assets

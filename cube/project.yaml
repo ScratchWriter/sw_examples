@@ -1,0 +1,15 @@
+src_dir: ./src
+out_dir: ./out
+clean: true
+
+targets:
+  cube:
+    src: cube.sw
+    out: cube
+    targets:
+      - sb3
+      - html
+    turbowarp-fps: 60
+
+default:
+  - cube
