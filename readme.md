@@ -1,4 +1,9 @@
 # ScratchWriter Examples
+Clone this repo:
+```
+git clone https://github.com/ScratchWriter/sw_examples.git
+```
+## Building
 ### Hello Scratch
 ```
 sw3 build hello_scratch.sw
