@@ -81,14 +81,11 @@ let last_mouse_y = 0;
 let txz = 0;
 let tyz = 0;
 
-function frame() {
+function frame(delta_time, events) {
     color.set_pen_rgb(0,0,0);
     gfx.fill();
 
     set_pen_size(1);
-
-    delta_time = timer() - last_time;
-    last_time = timer();
 
     if (get_mouse_down()) {
         txz += get_mouse_x() - last_mouse_x;
@@ -112,6 +109,4 @@ function frame() {
     text.draw("Drag to rotate!", 0, window.MIN_Y + 32 + sin(timer() * 180) * 1.5, text.CENTER, text.CENTER, 12, 1);
 }
 
-forever {
-    frame();
-}
+window.start(frame);

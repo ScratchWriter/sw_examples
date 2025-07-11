@@ -51,12 +51,8 @@ function draw_spiral(time) {
 }
 
 gfx.reset();
-let last = timer();
-let delta_time = 0;
 let fps = 0;
-function frame() {
-    delta_time = timer() - last;
-    last = timer();
+function frame(delta_time, events) {
     fps = ceil(1/delta_time);
     
     draw_spiral(timer() * ANIMATION_SPEED);
@@ -66,6 +62,4 @@ function frame() {
     text.draw("fps: "#fps, window.MIN_X+6, window.MAX_Y-22, text.LEFT, text.TOP, 12, 1);
 }
 
-forever {
-    frame();
-}
+window.start(frame);

@@ -1,8 +1,9 @@
 import "text" as text;
 import "color" as color;
 import "graphics" as graphics;
+import "window" as window;
 
-function frame() {
+function frame(delta_time, events) {
     // clear the screen
     graphics.fill_rgb(2,8,16);
 
@@ -14,6 +15,4 @@ function frame() {
     text.draw("Hello Scratch", x, y, text.CENTER, text.CENTER, 24, 1);
 }
 
-while(true) {
-    frame();
-}
+window.start(frame);
